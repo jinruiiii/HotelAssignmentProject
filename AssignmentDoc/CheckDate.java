@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * Check if date inputed by user is in the correct format.
- * @author joell
+ * @author joel
  * @author jin rui
  * @author jamie 
  * @author tan yu
