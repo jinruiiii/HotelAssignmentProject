@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
@@ -166,7 +166,7 @@ public class ReservationsDB {
     
     /**
      * Checks if the reservation code parameter passed in has been stored in the reservations database.
-     * @param ReservationCode
+     * @param ReservationCode	the reservation code to be searched for in the reservations database.
      * @return returns true if the reservation code is stored in the reservations database.
      */
     public boolean isValidCode(String ReservationCode){
