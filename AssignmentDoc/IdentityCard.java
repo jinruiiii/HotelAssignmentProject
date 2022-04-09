@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Stores all the information of a particular guest.
- * @author joell
+ * @author joel
  * @author jin rui
  * @author jamie
  * @author tan yu
