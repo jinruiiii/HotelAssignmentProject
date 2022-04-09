@@ -7,8 +7,10 @@ import java.util.Scanner;
  * Check if the user input is a double value. If input is an integer, it will automatically be returned as a double. 
  * Numeric inputs with data types other than integers or double will be considered invalid.
  * If invalid, user will be prompted to input until a double value is detected.
- * @author matchajam
- *
+ * @author joell
+ * @author jin rui
+ * @author jamie
+ * @author tan yu
  */
 
 public class CheckIfDouble {
