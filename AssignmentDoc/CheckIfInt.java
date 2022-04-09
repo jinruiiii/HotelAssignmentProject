@@ -6,8 +6,10 @@ import java.util.Scanner;
  * Check if the user input is an integer. 
  * Numeric inputs with data type other than integer will be considered invalid. 
  * If invalid, user will be prompted to input until an integer value is detected.
- * @author matchajam
- *
+ * @author joell
+ * @author jin rui
+ * @author jamie 
+ * @author tan yu
  */
 
 public class CheckIfInt {
