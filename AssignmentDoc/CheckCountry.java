@@ -7,8 +7,10 @@ import java.util.Scanner;
 /**
  * Check if a user input of a country is a valid country. 
  * If invalid, user will be prompted to input until a valid country is detected.
- * @author matchajam
- *
+ * @author joell
+ * @author jin rui
+ * @author jamie 
+ * @author tan yu
  */
 
 public class CheckCountry {
