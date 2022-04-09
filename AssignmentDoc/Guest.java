@@ -18,7 +18,7 @@ public class Guest {
     private CreditCard cc = null;
 
     /**
-     * Constructs a new <Guest> entry that takes in the guest's identification details. 
+     * Constructs a new <code>gust</code> entry that takes in the guest's identification details. 
      */
     Guest(){
         Scanner sc = new Scanner(System.in);
@@ -26,16 +26,16 @@ public class Guest {
     }
     
     /**
-     * Retrieves the <code>IdentityCard</code> and its details associated with the <code>Guest<code>, assuming that every <code>Guest<code> has an Identity card.
-     * @return	the <code>Guest<code>'s <code>IdentityCard</code>.
+     * Retrieves the <code>IdentityCard</code> and its details associated with the <code>Guest</code>, assuming that every <code>Guest</code> has an Identity card.
+     * @return	the <code>Guest</code>'s <code>IdentityCard</code>.
      */
     public IdentityCard getIc(){
         return this.ic;
     }
 
     /**
-     * Retrieves the <code>CreditCard</code> and its details associated with the <code>Guest<code>, if the <code>Guest<code> has a credit card.
-     * @return	the <code>Guest<code>'s <code>CreditCard</code>.
+     * Retrieves the <code>CreditCard</code> and its details associated with the <code>Guest</code>, if the <code>Guest</code> has a credit card.
+     * @return	the <code>Guest</code>'s <code>CreditCard</code>.
      */
     public CreditCard getCC(){
         return cc;
