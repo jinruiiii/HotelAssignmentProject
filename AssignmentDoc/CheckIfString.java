@@ -6,7 +6,7 @@ import java.lang.*;
 /**
  * Check if the user input is a string.
  * Any inputs with numbers are considered as invalid input.
- * @author joell
+ * @author joel
  * @author jin rui
  * @author jamie
  * @author tan yu
