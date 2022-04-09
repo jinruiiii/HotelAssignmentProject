@@ -6,7 +6,7 @@ import java.util.Hashtable;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
