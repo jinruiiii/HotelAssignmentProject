@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
@@ -40,5 +40,4 @@ public class Guest {
     public CreditCard getCC(){
         return cc;
     }
-
 }
