@@ -1,10 +1,12 @@
+package Assignment;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
@@ -57,7 +59,7 @@ public class Menu{
     
     /**
      * Checks if the food item is present in the current menu, remove it from the menu.
-     * @param food	the type of food item to be removed from the menu
+     * @param name	the type of food item to be removed from the menu
      * @return true when the current food item is already in the menu and removes it from the <code>foods</code> list, 
      * 		   otherwise the food item will not be removed from the menu.
      */
