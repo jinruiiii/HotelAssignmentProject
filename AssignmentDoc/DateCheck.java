@@ -16,8 +16,10 @@ import java.util.Date;
  * 2. Guest checks-out before stipulated timing 
  * If guest have not checked-out by stipulated check-out timing, guests will be evicted. Room status will be updated accordingly.
  * 3. Room service status is updated according to the current time and preparation time. 
- * @author matchajam
- *
+ * @author joell
+ * @author jin rui
+ * @author jamie
+ * @author tan yu
  */
 
 public class DateCheck implements Serializable
