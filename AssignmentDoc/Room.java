@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
