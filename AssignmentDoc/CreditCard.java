@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
@@ -38,7 +38,7 @@ public class CreditCard {
         this.creditCardNumber = sc.nextLine();
         System.out.println("Input expiration date");
         String date = sc.nextLine();
-        this.expirationDate = Check_date.get_input(date);
+        this.expirationDate = CheckDate.getInput(date);
     }
     
     /**
