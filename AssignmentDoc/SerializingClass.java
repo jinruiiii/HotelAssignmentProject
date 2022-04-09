@@ -29,7 +29,7 @@ public class SerializingClass implements Serializable {
 	 * Reads the file.
 	 * @param name			the filename.
 	 * @return				the file being read.
-	 * @throws IOException	if the IO operation fails
+	 * @throws IOException	if the IO operation fails.
 	 */
 	public static Object readFile(String name) throws IOException {
 		Object myObj = null;
@@ -62,7 +62,7 @@ public class SerializingClass implements Serializable {
 	 * Writes the file and saves it before shutting down the Hotel Reservation System.
 	 * @param name			the filename.
 	 * @param myObj			the object to be saved in the file.
-	 * @throws IOException	if the IO operation fails
+	 * @throws IOException	if the IO operation fails.
 	 */
 	public static void writeFile(String name, Object myObj) throws IOException {
 		try {
