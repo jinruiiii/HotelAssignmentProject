@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * 
- * @author joell
+ * @author joel
  * @author jinrui
  * @author jamie
  * @author tan yu
