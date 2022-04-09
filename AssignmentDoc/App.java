@@ -26,7 +26,8 @@ import java.time.*;
 public class App {
 	
 	/**
-	 * The main program for the Hotel Reservation System.			
+	 * The main program for the Hotel Reservation System.
+	 * @param args				The command line arguments.
 	 * @throws ParseException	if a string fails to be parsed.
 	 * @throws IOException		if the IO operation fails.
 	 */
