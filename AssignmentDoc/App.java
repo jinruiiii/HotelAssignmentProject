@@ -107,7 +107,7 @@ public class App {
             System.out.println("------------------------");
             
             String str_choice = sc.nextLine();
-            int choice = Check_if_int.get_input(str_choice, "(1) to (6)");
+            int choice = CheckIfInt.getInput(str_choice, "(1) to (6)");
                
             switch (choice) {
           //--------------------------------------(1) Guest----------------------------------------------------//
@@ -119,7 +119,7 @@ public class App {
                     System.out.println("(4) Exit");
                     System.out.println("------------------------");
                     String str_choice_guest = sc.nextLine();
-                    int choice2 = Check_if_int.get_input(str_choice_guest, "(1) to (4)");
+                    int choice2 = CheckIfInt.getInput(str_choice_guest, "(1) to (4)");
                     //Inner switch
                     switch(choice2) {
 
@@ -272,7 +272,7 @@ public class App {
                         System.out.println("-----------------------------------------------");
                         
                         String str_reserv = sc.nextLine();
-                        int option = Check_if_int.get_input(str_reserv, "(1) to (7)");
+                        int option = CheckIfInt.getInput(str_reserv, "(1) to (7)");
                     	switch(option) {
 	                        case 1:
 	                        	System.out.println("Walk-in or Reservation?");
@@ -504,7 +504,7 @@ public class App {
 	                                    	//Exception checking for check in date - calling the same class and methods as when you first made the reservation
 	                                        System.out.println("Please Enter New Check-In Date: ");
 	                                        String update_checkin = sc.nextLine();
-	                                        revervationUpdatedFieldString = Check_date.get_input(update_checkin);
+	                                        revervationUpdatedFieldString = CheckDate.getInput(update_checkin);
 	                                        myReservation.setCheckInDate(revervationUpdatedFieldString);
 	                                        System.out.println("Updated Check-In Date Is: " + myReservation.getCheckInDate());
 	                                        break;
@@ -512,7 +512,7 @@ public class App {
 	                                    	//Exception handling for check out date - calling the same class and methods as when you first made the reservation and check in on top
 	                                        System.out.println("Please Enter New Check-Out Date: ");
 	                                        String update_checkout = sc.nextLine();
-	                                        revervationUpdatedFieldString = Check_date.get_input(update_checkout);
+	                                        revervationUpdatedFieldString = CheckDate.getInput(update_checkout);
 	                                        myReservation.setCheckOutDate(revervationUpdatedFieldString);
 	                                        System.out.println("Updated Check-Out Date Is: " + myReservation.getCheckOutDate());
 	                                        break;
@@ -520,7 +520,7 @@ public class App {
 	                                    	//Exception handling for number of adults - same as previous 
 	                                        System.out.println("Please Enter New Number of Adults: ");
 	                                        String update_adults = sc.nextLine();
-	                                        revervationUpdatedFieldInt = Check_if_int.get_input(update_adults, "Number of adults");
+	                                        revervationUpdatedFieldInt = CheckIfInt.getInput(update_adults, "Number of adults");
 	                                        myReservation.setAdults(revervationUpdatedFieldInt);
 	                                        System.out.println("Updated Number of Adults Is: " + myReservation.getAdults());
 	                                        break;
@@ -528,7 +528,7 @@ public class App {
 	                                    	//Exception handling for number of children - same as previous
 	                                        System.out.println("Please Enter New Number of Children: ");
 	                                        String update_children = sc.nextLine();
-	                                        revervationUpdatedFieldInt = Check_if_int.get_input(update_children, "Number of children");
+	                                        revervationUpdatedFieldInt = CheckIfInt.getInput(update_children, "Number of children");
 	                                        myReservation.setChildren(revervationUpdatedFieldInt);
 	                                        System.out.println("Updated Number of Children Is: " + myReservation.getChildren());
 	                                        break;
@@ -567,7 +567,7 @@ public class App {
                         System.out.println("(5) Exit");
                         System.out.println("---------------------------------------");
                         String str_room = sc.nextLine();
-                        userInput = Check_if_int.get_input(str_room, "(1) to (5)");
+                        userInput = CheckIfInt.getInput(str_room, "(1) to (5)");
                         switch(userInput){
                         
                         
@@ -764,7 +764,7 @@ public class App {
 	                    System.out.println("(7) Exit");
 	                    System.out.println("---------------------------------");
 	                    String str_room_serv = sc.nextLine();
-	                    choice2 = Check_if_int.get_input(str_room_serv, "(1) to (7)");   
+	                    choice2 = CheckIfInt.getInput(str_room_serv, "(1) to (7)");   
 	                    
 	                	switch(choice2){
 	
@@ -781,7 +781,7 @@ public class App {
 	                            //Exception checking here using check_if_int to check if price entered is a double!
 	                            System.out.println("Enter the Price Of New Food");
 	                            String price_input = sc.nextLine();
-	                            price = Check_if_double.get_input(price_input, "Price of New Food");
+	                            price = CheckIfDouble.getInput(price_input, "Price of New Food");
 	                        
 	                            Food newFood = new Food(name, preparation, price);
 	                            success = menu.addFood(newFood);
@@ -840,7 +840,7 @@ public class App {
 	                                
 	                                //Handle exception here! - check if input is integer!
 	                                String continueOrder_input = sc.nextLine();
-	                                continueOrder = Check_if_int.get_input(continueOrder_input, "(1) or (2)");
+	                                continueOrder = CheckIfInt.getInput(continueOrder_input, "(1) or (2)");
 	                                
 	                                if (continueOrder == 1){
 	                                	RoomService newRoomService = new RoomService(menu);
