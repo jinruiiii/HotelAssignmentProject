@@ -1,7 +1,14 @@
 package Assignment;
 
+
 import java.io.Serializable;
+import java.time.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -28,13 +35,27 @@ public class Reservation implements Payment, Serializable{
     private String code;
     private double payment;
 
-    Reservation(Guest guest){
-    	//Exception Handling for all the dates inputed
+    Reservation(Guest guest, int walkIn, Date dt){
+    	    	//Exception Handling for all the dates inputed
         this.guest = guest;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input check in date (YYYY-MM-DD)");
-        String dateCheckin = sc.nextLine();
-        this.checkInDate = CheckDate.getInput(dateCheckin);
+    	Scanner sc = new Scanner(System.in);
+
+    	String pattern = "yyyy-MM-dd";
+    	DateFormat df = new SimpleDateFormat(pattern);
+    	Date today = dt;        
+    	String todayAsString = df.format(today);
+         
+        if(walkIn == 1) { 
+        	DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
+        	String strDate = dateFormat.format(dt);  
+        	this.checkInDate = todayAsString;
+        }
+        else {
+            System.out.println("Input check in date (YYYY-MM-DD)");
+            String dateCheckin = sc.nextLine();
+        	this.checkInDate = CheckDate.getInput(dateCheckin);        	
+        }
+        
         
         
         System.out.println("Input check out date (YYYY-MM-DD)");
