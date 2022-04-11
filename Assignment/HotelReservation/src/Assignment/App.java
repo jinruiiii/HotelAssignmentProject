@@ -476,7 +476,8 @@ public class App {
 	                                System.out.println("Your Total Bill is: SGD" + df.format(totalPayment)); 
 	                                // maybe include a statement below to indicate paid by credit card or cash?
 	                                reservationsDB.getReservationFromReservationCode(reservationCode).useCreditCard();
-	                                System.out.println("========================================================");	                                
+	                                System.out.println("========================================================");	   
+					sc.nextLine();
 	                                reservationsDB.checkOut(reservationCode);
 	                            }
 	                            break;
