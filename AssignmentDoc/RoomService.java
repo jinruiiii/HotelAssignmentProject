@@ -31,15 +31,50 @@ public class RoomService implements Payment, Serializable{
         DELIVERED,
     }
 
+    /**
+     * the status of the room service.
+     */
     protected RoomServiceStatus roomServiceStatus;
+    
+    /**
+     * gives the local date 
+     */
     private LocalDate date;
     private LocalTime time;
+    
+    /**
+     * the date and time the momemt the room service order was created.
+     */
     private LocalDateTime orderDateandTime;
+    
+    /**
+     * the date and time for the room service order being prepared.
+     */
     private LocalDateTime pendingDateandTime;
+    
+    /**
+     * the date and time for the room service order when delivered to the guest.
+     */
     private LocalDateTime deliveredDateandTime;
+    
+    /** 
+     * the remarks given to the food during order 
+     */
     private String remarks = null;
+    
+    /**
+     * the menu of food items in the hotel.
+     */
     private Menu menu;
+    
+    /**
+     *  the name of the food
+     */
     private String name;
+    
+    /** 
+     * the total payment that the guest needs to pay for RoomService orders at the end of the guest's stay
+     */
     private double payment;
     
     /**
