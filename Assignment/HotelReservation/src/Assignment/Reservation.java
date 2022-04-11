@@ -36,7 +36,7 @@ public class Reservation implements Payment, Serializable{
     private double payment;
     private double discount = 0.10;
 
-    Reservation(Guest guest, int walkIn, Date dt){
+    public Reservation(Guest guest, int walkIn, Date dt){
     	    	//Exception Handling for all the dates inputed
         this.guest = guest;
     	Scanner sc = new Scanner(System.in);
