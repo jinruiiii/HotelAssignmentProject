@@ -3,6 +3,7 @@ package Assignment;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -18,7 +19,8 @@ import java.time.format.DateTimeFormatter;
  * @author tan yu
  *
  */
-public class RoomService implements Payment{
+public class RoomService implements Payment, Serializable{
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Contains the status of each room service order made.
@@ -143,15 +145,13 @@ public class RoomService implements Payment{
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
     	
-    	System.out.println("The confirmation Date and Time is " + this.orderDateandTime);
-    	System.out.println("The pending Date and Time is " + this.pendingDateandTime);
-    	System.out.println("The delivered Date and Time is " + this.deliveredDateandTime);
+//    	System.out.println("The confirmation Date and Time is " + this.orderDateandTime);
+//    	System.out.println("The pending Date and Time is " + this.pendingDateandTime);
+//    	System.out.println("The delivered Date and Time is " + this.deliveredDateandTime);
     	
     	
         for (int i=0; i<menu.foods.size();i++) {
             if (foodName.equals(menu.foods.get(i).getName())) {
-            	this.date = LocalDate.now();
-            	this.time = LocalTime.now();
             	this.name = foodName;
                 this.payment = menu.foods.get(i).getPrice();
                 this.roomServiceStatus = RoomServiceStatus.CONFIRMED;
