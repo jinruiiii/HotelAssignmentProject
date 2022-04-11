@@ -1,6 +1,7 @@
 package Assignment;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * 
@@ -10,7 +11,8 @@ import java.util.ArrayList;
  * @author tan yu
  *
  */
-public class ReservationsDB {
+public class ReservationsDB implements Serializable{
+	private static final long serialVersionUID = 1L;
     private ArrayList<Object> ReservationDataBase = new ArrayList<Object>();
     //Index		Variable
     //0			Reservation Code
