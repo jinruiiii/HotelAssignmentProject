@@ -469,7 +469,8 @@ public class App {
 	                                else {
 	                                	System.out.println("Paid by Cash.");
 	                                }
-	                                System.out.println("========================================================");	                                
+	                                System.out.println("========================================================");	
+					sc.nextLine();
 	                                DataBase.checkOut(reservationCode);
 	                            }
 	                            break;
