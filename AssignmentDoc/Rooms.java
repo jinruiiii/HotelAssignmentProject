@@ -15,13 +15,16 @@ import java.util.Hashtable;
 public class Rooms implements Serializable {
     protected Room[] rooms;
     
-    int numRooms = 48;
+    /** 
+     * number of rooms in the hotel
+     */
+    private int numRooms = 48;
     
     /**
      * Constructs 48 rooms for the entire hotel. Contains all the details of each individual room in the hotel, such as the room number, room type, Wifi, smoking and view.
      */
     Rooms(){
-        rooms = new Room[48];
+        rooms = new Room[numRooms];
     }
     
     /**
