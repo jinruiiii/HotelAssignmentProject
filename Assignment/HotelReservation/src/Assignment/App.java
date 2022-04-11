@@ -292,7 +292,7 @@ public class App {
 	                            System.out.println("(2) Reservation");
 	                            int stay = sc.nextInt();
 	                            myGuest = new Guest();
-	                            myReservation = new Reservation(myGuest);
+	                            myReservation = new Reservation(myGuest, stay, dt);
 	                            int roomOption = 0;
 	                            roomOption = 0;
 	                            String roomType;
@@ -355,13 +355,14 @@ public class App {
 	                                    Room room = rooms.getRoom(rooms.deformatRoomNum(formattedRoomNum));
 	                                    if (stay == 1) {
 	                                    	room.setStatus(Room.RoomStatus.OCCUPIED);
+	                                    	myReservation.setStatus(ReservationStatus.CHECKED_IN);
 	                                    }
-	                                    else room.setStatus(Room.RoomStatus.RESERVED);
+	                                    else {room.setStatus(Room.RoomStatus.RESERVED);
+	                                    myReservation.setStatus(ReservationStatus.CONFIRMED);}
 	                                    myReservation.setRoom(room);
 	                                    myReservation.generateCode();
 	                                    reservationsDB.appendRow(myReservation.getReservationCode(), myReservation);
 	                                    System.out.println("Reservation Is Successful");
-	                                    myReservation.setStatus(ReservationStatus.CONFIRMED);
 	                                
 	                  // =================================== Adding in the printing of the reservation details if reservation is successful =============================//
 	                                    
@@ -441,8 +442,12 @@ public class App {
 	                            reservationCode = sc.nextLine();
 	                            if(reservationsDB.getReservationFromReservationCode(reservationCode) == null) {
 	                                System.out.println("No reservation under this code has been made!");
-	                            } else {
-	                            	String format = "%-20s%-20s%-20s%-20s%-20s%n";
+	                            }
+	                            else if( !reservationsDB.getReservationFromReservationCode(reservationCode).getStatus().equals(ReservationStatus.CHECKED_IN)  ) {
+	                            	System.out.println("Guest is not checked-in!");
+	                            }
+	                            else {
+	                            	String format = "%-30s%-20s%-20s%-20s%n";
 	                            	DecimalFormat df = new DecimalFormat("0.00");
 	                            	double totalPayment = reservationsDB.getReservationFromReservationCode(reservationCode).getPayment();
 	                                System.out.println("#" + reservationCode + " INVOICE");
@@ -452,8 +457,8 @@ public class App {
 	                                System.out.println("========================================================");
 	                                System.out.println("Your Room Service Orders");
 	                                System.out.println("========================================================");
-	                                System.out.printf(format, "Date Ordered", "Food Ordered", "Time Ordered", "Amount", "Remarks");
-	                                System.out.printf(format, "================", "================", "================", "================", "================");
+	                                System.out.printf(format, "Date and Time Ordered", "Food Ordered", "Amount", "Remarks");
+	                                System.out.printf(format, "============================", "================", "================", "================");
 	                                if (roomServiceDB.rsDB.get(reservationCode) != null) {
 	                                	for (int i=0;i<roomServiceDB.rsDB.get(reservationCode).size();i++) {
 	                                    	roomServiceDB.rsDB.get(reservationCode).get(i).printBill();
@@ -477,7 +482,7 @@ public class App {
 	                                // maybe include a statement below to indicate paid by credit card or cash?
 	                                reservationsDB.getReservationFromReservationCode(reservationCode).useCreditCard();
 	                                System.out.println("========================================================");	   
-					sc.nextLine();
+	                                sc.nextLine();
 	                                reservationsDB.checkOut(reservationCode);
 	                            }
 	                            break;
@@ -552,7 +557,7 @@ public class App {
 	                            reservationsDB.printReservationFromReservationCode(reservationCode);                           
 	                            break;
 	                        case 6:
-	                        	reservationsDB.displayAllReservations();                            
+	                        	reservationsDB.displayAllReservations();    
 	                            break;
 	                        case 7:
 	                        	on2 = false;
@@ -694,7 +699,9 @@ public class App {
 	                                        System.out.println("(2) Change Weekend Rate");
 	                                        System.out.println("(3) Change Room Status");
 	                                        System.out.println("(4) Exit");
-	                                        int choice1 = sc.nextInt();
+	                                        
+	                                        String str_update = sc.nextLine();
+	                                        int choice1 = CheckIfInt.getInput(str_update, "(1) to (4)");
 	                                        switch(choice1) {
 		                                        case 1:
 		                                        	System.out.println("Current room's Weekday rate: " + rooms.rooms[i].weekdayRate);
@@ -714,7 +721,6 @@ public class App {
 		                                        	
 		                                        case 3:
 		                                        	System.out.println("Enter New Status For Room Number " + roomNumber);
-		                                        	sc.nextLine();
 		                                            statusStr = sc.nextLine();		                                            
 		                                            if (statusStr.equals("VACANT") || statusStr.equals("OCCUPIED") || statusStr.equals("RESERVED") || statusStr.equals("MAINTENANCE")){
 		                                                rooms.getRoom(i+1).setStatus(Room.RoomStatus.valueOf(statusStr));
@@ -836,6 +842,11 @@ public class App {
 	                                System.out.println("Reservation Code Is Not Valid");
 	                                System.out.println("Exiting...");
 	                                break;
+	                            }
+	                            
+	                            else if( !reservationsDB.getReservationFromReservationCode(code).getStatus().equals(ReservationStatus.CHECKED_IN)  ) {
+	                            	System.out.println("Guest is not checked-in!");
+	                            	break;
 	                            }
 	
 	                            while(true){
