@@ -1,6 +1,13 @@
 package Assignment;
 
+import java.io.Serializable;
+import java.time.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +21,7 @@ import java.util.Scanner;
  * @author tan yu
  *
  */
-public class Reservation implements Payment{
+public class Reservation implements Payment, Serializable{
 	
 	/*
 	 * Contains the different types of reservation statuses, depending on the guest's check-in date.
@@ -27,6 +34,7 @@ public class Reservation implements Payment{
 		WAITLIST,CONFIRMED,CHECKED_IN,EXPIRED;
 	}
 	
+	private static final long serialVersionUID = 1L;
 	protected ReservationStatus status = ReservationStatus.WAITLIST;
     private Room room;
     private Guest guest;
@@ -42,8 +50,10 @@ public class Reservation implements Payment{
      * Constructs an empty reservation requested by the guest, which requires the guest to indicate their check-in date, check-out date, number of adults and children and stores the reservation into the 
      * hotel's reservation database if successful.
      * @param guest		the guest's details. If the guest cannot found, the reservation cannot be made. 
+     * @param walkIn	indicates if the Guest is booking a room via walk-in or reservation. Returns 0 if walk-in.
+     * @param dt		the date that the Reservation was made.
      */
-    Reservation(Guest guest){
+    public Reservation(Guest guest, int walkIn, Date dt){
     	//Exception Handling for all the dates inputed
         this.guest = guest;
         Scanner sc = new Scanner(System.in);
@@ -66,7 +76,7 @@ public class Reservation implements Payment{
         this.children = CheckIfInt.getInput(num_children,"children");
     }
 
-    /**
+	/**
      * Gets the generated reservation code for the guest upon successful reservation.
      * @return the generated reservation code tied to the guest.
      */
