@@ -35,6 +35,10 @@ public class Reservation implements Payment, Serializable{
 	}
 	
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Reservation is on the waitlist
+	 */
 	protected ReservationStatus status = ReservationStatus.WAITLIST;
 	
 	/**
