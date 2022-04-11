@@ -23,9 +23,9 @@ public class RoomService implements Payment, Serializable{
     protected RoomServiceStatus roomServiceStatus;
     private LocalDate date;
     private LocalTime time;
-    private LocalDateTime orderDateAndTime;
-    private LocalDateTime pendingDateAndTime;
-    private LocalDateTime deliveredDateAndTime;
+    private LocalDateTime orderDateandTime;
+    private LocalDateTime pendingDateandTime;
+    private LocalDateTime deliveredDateandTime;
     private String remarks = null;
     private Menu menu;
     private String name;
@@ -48,7 +48,7 @@ public class RoomService implements Payment, Serializable{
     	System.out.println("The time is " + dt);
     	
     	// Set Confirmation Time at Current Time
-    	this.orderDateAndTime = dt.toInstant()
+    	this.orderDateandTime = dt.toInstant()
         .atZone(ZoneId.systemDefault())
         .toLocalDateTime();
     	
@@ -57,7 +57,7 @@ public class RoomService implements Payment, Serializable{
     	c.setTime(dt);
         c.add(Calendar.MINUTE, 15);
         dt = c.getTime();
-        this.pendingDateAndTime = dt.toInstant()
+        this.pendingDateandTime = dt.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
         
@@ -66,7 +66,7 @@ public class RoomService implements Payment, Serializable{
     	c.setTime(dt);
         c.add(Calendar.MINUTE, 45);
         dt = c.getTime();
-        this.deliveredDateAndTime = dt.toInstant()
+        this.deliveredDateandTime = dt.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime();
     	
@@ -77,8 +77,6 @@ public class RoomService implements Payment, Serializable{
     	
         for (int i=0; i<menu.foods.size();i++) {
             if (foodName.equals(menu.foods.get(i).getName())) {
-            	this.date = LocalDate.now();
-            	this.time = LocalTime.now();
             	this.name = foodName;
                 this.payment = menu.foods.get(i).getPrice();
                 this.roomServiceStatus = RoomServiceStatus.CONFIRMED;
@@ -98,22 +96,24 @@ public class RoomService implements Payment, Serializable{
     }
     
     public void printBill() {
-    	String format = "%-20s%-20s%-20s%-20s%-20s%n";
+    	String format = "%-30s%-20s%-20s%-20s%n";
     	DecimalFormat df = new DecimalFormat("0.00");
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("kk:mm:ss");
-        System.out.printf(format, this.date, this.name, this.time.format(formatter), "SGD" + df.format(this.payment), this.remarks);
+        Date date2 = Date.from(orderDateandTime.atZone(ZoneId.systemDefault()).toInstant());
+
+        System.out.printf(format, date2, this.name, "SGD" + df.format(this.payment), this.remarks);
     }
 
 	public LocalDateTime getOrderDateandTime() {
-		return orderDateAndTime;
+		return orderDateandTime;
 	}
 
 	public LocalDateTime getPendingDateandTime() {
-		return pendingDateAndTime;
+		return pendingDateandTime;
 	}
 
 	public LocalDateTime getDeliveredDateandTime() {
-		return deliveredDateAndTime;
+		return deliveredDateandTime;
 	}
 
 	public void setRoomServiceStatus(RoomServiceStatus roomServiceStatus) {
