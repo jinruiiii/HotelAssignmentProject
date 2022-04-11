@@ -36,14 +36,50 @@ public class Reservation implements Payment, Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	protected ReservationStatus status = ReservationStatus.WAITLIST;
+	
+	/**
+	 *  the room the Guest is staying in 
+	 */
     private Room room;
+    
+    /**
+     * the Guest the reservation is associated to
+     */
     private Guest guest;
+    
+    /**
+     * the check-in date declared by the Guest
+     */
     private String checkInDate;
+    
+    /**
+     * the check-out date declared by the Guest
+     */
     private String checkOutDate;
+    
+    /**
+     * the number of adults declared by the Guest
+     */
     private int adults;
+    
+    /**
+     * the number of children declared by the Guest
+     */
     private int children;
+    
+    /** 
+     * the reservation code given to the Guest after successful reservation
+     */
     private String code;
+    
+    /**
+     * the total payment for the room stay for each Guest
+     */
     private double payment;
+    
+    /**
+     * the discount given to the Guest upon successful discount code input
+     */
     private double discount = 0.10;
     
     /**
