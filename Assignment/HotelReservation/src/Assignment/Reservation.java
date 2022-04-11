@@ -34,6 +34,7 @@ public class Reservation implements Payment, Serializable{
     private int children;
     private String code;
     private double payment;
+    private double discount = 0.10;
 
     Reservation(Guest guest, int walkIn, Date dt){
     	    	//Exception Handling for all the dates inputed
@@ -150,10 +151,6 @@ public class Reservation implements Payment, Serializable{
         this.children = children;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public double getPayment() {
         // counting the number of weekdays and weekends and add the rates accordingly
         LocalDate parsedCheckInDate = LocalDate.parse(this.checkInDate);
@@ -174,10 +171,6 @@ public class Reservation implements Payment, Serializable{
     public void printBill() {
     	DecimalFormat df = new DecimalFormat("0.00");
     	System.out.println("The subtotal bill for your hotel stay is: SGD" + df.format(this.payment));
-    }
-    
-    public double getDiscount() {
-		return 0.10;
     }
     
     public CreditCard useCreditCard() {
