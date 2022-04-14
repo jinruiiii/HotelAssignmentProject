@@ -104,6 +104,10 @@ public class Reservation implements Payment, Serializable{
     public String getCode(){
         return code;
     }
+	
+    public double getDiscount(){
+	    return discount;
+    }
     
     
     public ReservationStatus getStatus() {
