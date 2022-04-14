@@ -16,7 +16,7 @@ import java.io.*;
 import java.time.*;
 
 /**
- * Check if date inputed by user is in the correct format.
+ * 
  * @author joel
  * @author jin rui
  * @author jamie 
@@ -26,7 +26,7 @@ import java.time.*;
 public class App {
 	/**
 	 * The main program for the Hotel Reservation System.
-	 * @param args				The command line arguments.
+	 * @param args			The command line arguments.
 	 * @throws ParseException	if a string fails to be parsed.
 	 * @throws IOException		if the IO operation fails.
 	 */
