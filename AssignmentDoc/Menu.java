@@ -45,7 +45,7 @@ public class Menu{
     /**
      * Checks if the food item is not already present in the current menu, add it to the menu.
      * @param food	the type of food item to be added to the menu
-     * @return true when the current food item has not been added into the menu and stores it in the <code>foods</code> list, 
+     * @return true when the current food item has not been added into the menu and stores it in the foods list, 
      * 		   otherwise the food item will not be added to the menu.
      */
     public boolean addFood(Food food) {
@@ -60,7 +60,7 @@ public class Menu{
     /**
      * Checks if the food item is present in the current menu, remove it from the menu.
      * @param name	the type of food item to be removed from the menu
-     * @return true when the current food item is already in the menu and removes it from the <code>foods</code> list, 
+     * @return true when the current food item is already in the menu and removes it from the foods list, 
      * 		   otherwise the food item will not be removed from the menu.
      */
     public boolean removeFood(String name){
