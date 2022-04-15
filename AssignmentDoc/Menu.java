@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 
+ * Contains the list of food items and its associated details.
  * @author joel
  * @author jinrui
  * @author jamie
