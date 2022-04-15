@@ -36,12 +36,12 @@ public interface Payment {
 	 */
 	final double totalTax = GST + serviceTax;
 	
-	/*
+	/**
 	 * Gets the payment for either the guest's total room charges or their room service orders.
 	 */
 	public abstract double getPayment();
 	
-	/*
+	/**
 	 * Displays the invoice of either the guest's total room charges or their room service orders, billed to the guest.
 	 */
 	public abstract void printBill();
