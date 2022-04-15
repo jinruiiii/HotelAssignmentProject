@@ -24,7 +24,7 @@ public class RoomService implements Payment, Serializable{
 
 	/**
 	 * Contains the status of each room service order made.
-	 */
+	 **/
     public enum RoomServiceStatus{
         CONFIRMED,
         PREPARING,
@@ -37,9 +37,13 @@ public class RoomService implements Payment, Serializable{
     protected RoomServiceStatus roomServiceStatus;
     
     /**
-     * gives the local date 
+     * gives the local date.
      */
     private LocalDate date;
+    
+    /**
+     * give the local time.
+     */
     private LocalTime time;
     
     /**
