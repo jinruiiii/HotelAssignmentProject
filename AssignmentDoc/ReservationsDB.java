@@ -102,8 +102,8 @@ public class ReservationsDB implements Serializable{
      */
     public void displayAllReservations(){
         String format = "%-20s%-20s%-20s%-20s%-20s%-20s%n";
-        System.out.printf(format, "Reservation Code", "Check-In Date", "Check-Out Date", "# of Adults", "# of Children", "Room Type" );
-        System.out.printf(format, "================", "==================", "==================", "==================", "==================",  "==================");
+        System.out.printf(format, "Reservation Code", "Reservation Status", "Check-In Date", "Check-Out Date", "# of Adults", "# of Children", "Room Type" );
+        System.out.printf(format, "================", "==================", "==================", "==================", "==================",  "==================","==================");
 
         for(int i = 0; i<ReservationDataBase.size(); i++) {
             System.out.printf(format, ((ArrayList<Object>)ReservationDataBase.get(i)).get(0), ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getCheckInDate(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getCheckOutDate(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getAdults(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getChildren(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getRoom().getRoomType());
@@ -117,8 +117,8 @@ public class ReservationsDB implements Serializable{
      */
     public void printReservationFromReservationCode(String ReservationCode) {
     	String format = "%-20s%-20s%-20s%-20s%-20s%-20s%n";
-        System.out.printf(format, "Reservation Code", "Check-In Date", "Check-Out Date", "# of Adults", "# of Children", "Room Type" );
-        System.out.printf(format, "================", "==================", "==================", "==================", "==================",  "==================");
+        System.out.printf(format, "Reservation Code","Reservation Status", "Check-In Date", "Check-Out Date", "# of Adults", "# of Children", "Room Type" );
+        System.out.printf(format, "================", "==================", "==================", "==================", "==================",  "==================","==================");
         for(int i = 0; i<ReservationDataBase.size(); i++) {
             if(((String)((ArrayList<Object>)ReservationDataBase.get(i)).get(0)).equals(ReservationCode)) {
             	System.out.printf(format, ((ArrayList<Object>)ReservationDataBase.get(i)).get(0), ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getCheckInDate(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getCheckOutDate(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getAdults(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getChildren(),  ((Reservation)((ArrayList<Object>)ReservationDataBase.get(i)).get(1)).getRoom().getRoomType());
