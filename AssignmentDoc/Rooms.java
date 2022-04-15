@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
- * Contains all the details for every hotel room.
+ * Contains all the details for every hotel room. 
  * @author joel
  * @author jinrui
  * @author jamie
@@ -13,6 +13,10 @@ import java.util.Hashtable;
  *
  */
 public class Rooms implements Serializable {
+	
+	/**
+	 * a list of rooms containing the details of each room.
+	 */
     protected Room[] rooms;
     
     /** 
