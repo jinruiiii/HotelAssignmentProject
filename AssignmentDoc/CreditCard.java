@@ -3,7 +3,7 @@ package Assignment;
 import java.util.Scanner;
 
 /**
- * 
+ * Contains the details of the credit card holder.
  * @author joel
  * @author jinrui
  * @author jamie
