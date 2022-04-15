@@ -11,11 +11,11 @@ package Assignment;
 public class SingleRoom extends Room{
 	
 	/**
-	 * Constructs an empty hotel <code>Room</code> with a <code>SingleRoom</code> room type and a Single bed type.
-	 * @param roomNum	the unique room number for this specific type of <code>Room</code>
-	 * @param wifi		the availability of a Wifi feature for this specific type of <code>Room</code>
-	 * @param smoking	the allowance of smoking in this specific type of <code>Room</code>
-	 * @param view		the presence or absence of a balcony for this specific type of <code>Room</code>
+	 * Constructs an empty hotel room with a SingleRoom room type and a single bed type.
+	 * @param roomNum	the unique room number for this specific type of room.
+	 * @param wifi		the availability of a Wifi feature for this specific type of room.
+	 * @param smoking	the allowance of smoking in this specific type of room.
+	 * @param view		the presence or absence of a balcony for this specific type of room.
 	 */
     public SingleRoom(String roomNum, Boolean wifi, Boolean smoking, Boolean view) {
 
