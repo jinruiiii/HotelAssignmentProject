@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
- * 
+ * Contains all the room service order details for all guests.
  * @author joel
  * @author jinrui
  * @author jamie
