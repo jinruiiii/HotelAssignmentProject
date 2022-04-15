@@ -496,6 +496,7 @@ public class App {
 	                                reservationsDB.getReservationFromReservationCode(reservationCode).useCreditCard();
 	                                System.out.println("========================================================");	   
 	                                sc.nextLine();
+	                                rooms.getRoom(rooms.deformatRoomNum(reservationsDB.getReservationFromReservationCode(reservationCode).getRoom().getRoomNum())).setStatus(RoomStatus.VACANT);
 	                                reservationsDB.checkOut(reservationCode);
 	                            }
 	                            break;
