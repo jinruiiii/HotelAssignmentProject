@@ -33,14 +33,51 @@ public class Room implements Serializable{
         VACANT,OCCUPIED,RESERVED,MAINTENANCE;
     }
 
+    /**
+     * the type of bed in the room.
+     */
+    
+    
     protected BedType bedtype;
+    
+    /**
+     * the type of room.
+     */
     protected RoomType roomtype;
+    
+    /**
+     * the availability of the room. Set to default as vacant.
+     */
     protected RoomStatus status = RoomStatus.VACANT;
+    
+    /**
+     * the price of hotel stay on a weekend.
+     */
     protected double weekendRate;
+    
+    /**
+     * the price of hotel stay on a weekday.
+     */
     protected double weekdayRate;
+    
+    /**
+     * the room number.
+     */
     private String roomNum;
+    
+    /**
+     * the availability of a Wifi feature in the room.
+     */
     private Boolean wifi;
+    
+    /**
+     * the allowance of smoking in this hotel room.
+     */
     private Boolean smoking;
+    
+    /**
+     * the presence or absence of a balcony for the hotel room.
+     */
     private Boolean view;
 
     /**
