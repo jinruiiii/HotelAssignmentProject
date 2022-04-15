@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * 
+ * Contains all the methods to serialise the details in the main program.
  * @author joel
  * @author jinrui
  * @author jamie
