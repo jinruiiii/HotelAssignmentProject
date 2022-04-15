@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
- * 
+ * Contains all the details for every hotel room.
  * @author joel
  * @author jinrui
  * @author jamie
