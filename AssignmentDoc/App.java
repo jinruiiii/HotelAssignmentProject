@@ -16,7 +16,7 @@ import java.io.*;
 import java.time.*;
 
 /**
- * 
+ * The main application for the program.
  * @author joel
  * @author jin rui
  * @author jamie 
