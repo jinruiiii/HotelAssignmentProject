@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.io.Serializable;
 
 /**
- * 
+ * Contains all the reservation details associated with each guest, if any.
  * @author joel
  * @author jinrui
  * @author jamie
