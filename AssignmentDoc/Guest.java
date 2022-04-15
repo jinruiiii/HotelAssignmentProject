@@ -3,7 +3,7 @@ package Assignment;
 import java.util.Scanner;
 
 /**
- * 
+ * Contains an identity card containing the guest's details and credit card details, if any.
  * @author joel
  * @author jinrui
  * @author jamie
