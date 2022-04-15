@@ -1,7 +1,7 @@
 package Assignment;
 
 /**
- * 
+ * Contains the details of the food prepared by the hotel.
  * @author joel
  * @author jinrui
  * @author jamie
