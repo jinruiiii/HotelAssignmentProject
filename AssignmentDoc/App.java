@@ -26,12 +26,11 @@ import java.time.*;
 public class App {
 	/**
 	 * The main program for the Hotel Reservation System.
-	 * @param args			The command line arguments.
+	 * @param args				The command line arguments.
 	 * @throws ParseException	if a string fails to be parsed.
 	 * @throws IOException		if the IO operation fails.
 	 */
     public static void main(String[] args) throws ParseException, IOException {
-
 
     	//Reading rooms.ser file to initialize 48 empty rooms
     	Rooms rooms = (Rooms) SerializingClass.readFile("rooms.ser");
@@ -59,17 +58,6 @@ public class App {
     		dt = new GregorianCalendar(2022, Calendar.APRIL, 1).getTime();
 
     	}
-    	
-//    	System.out.println(rooms);
-//    	System.out.println(DataBase);
-//    	System.out.println(rsDB);
-//    	System.out.println(dt);
-//
-//	      
-	      		   
-	      
-	      
-	      
 
         // Initializing the menu
         Menu menu = new Menu();
@@ -83,30 +71,21 @@ public class App {
         menu.addFood(coke);
         menu.addFood(salad);
         menu.addFood(grilledChicken);
-        // end
         
         //Initializing the Reservations Database
         Scanner sc = new Scanner(System.in);
         boolean on = true;
-        //end
-        
-        
-        
         
         // Intializing the Discount Codes List
         ArrayList<String> discountList = new ArrayList<String>();
         discountList.add("HAPPYHOLS");
         discountList.add("USECREDITCARD");
-        //end
         
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------//
         // Beginning of the program
         System.out.println("Welcome to ABC Hotel. Please choose one of the following options to proceed: ");
         while (on) {
-        	
-        	
-        	
-        	
+
         	// Print Current Time
         	System.out.println("Date & Time is = " + dt);
 
@@ -132,8 +111,7 @@ public class App {
             
             String stringChoice = sc.nextLine();
             int choice = CheckIfInt.getInput(stringChoice, "(1) to (6)");
-            
-            
+                   
             switch (choice) {
           //--------------------------------------(1) Guest----------------------------------------------------//
                 case 1:
@@ -437,17 +415,16 @@ public class App {
 	                        	//Get reservation code for checking in!
 	                        	System.out.println("Please enter reservation code: ");
 	                            reservationCode = sc.nextLine();
-	                            if(reservationsDB.getReservationFromReservationCode(reservationCode) == null) {
+	                            if (reservationsDB.getReservationFromReservationCode(reservationCode) == null) {
 	                                System.out.println("No reservation under this code has been made!");
 	                            }
 	                            //Update the room status as the guest checks in!
-	                            else {
-	                            		
-	                                	Reservation reserveCheckIn = reservationsDB.getReservationFromReservationCode(reservationCode);
-	                                	reserveCheckIn.getRoom().setStatus( RoomStatus.OCCUPIED );
-	                                	reserveCheckIn.setStatus(ReservationStatus.CHECKED_IN);
-	                                	System.out.println("Successfully checked-in!");
-	                                }
+	                            else {	                            
+                                	Reservation reserveCheckIn = reservationsDB.getReservationFromReservationCode(reservationCode);
+                                	reserveCheckIn.getRoom().setStatus( RoomStatus.OCCUPIED );
+                                	reserveCheckIn.setStatus(ReservationStatus.CHECKED_IN);
+                                	System.out.println("Successfully checked-in!");
+	                            }
 	                        	break;
 	                        	
 	                        case 3: // printing guest's hotel bill invoice
@@ -505,14 +482,12 @@ public class App {
 	                            System.out.println("Please enter reservation code: ");
 	                            reservationCode = sc.nextLine();
 	                            
-	                            //Exception handling - for null pointers
-	                            
+	                            //Exception handling - for null pointers	                            
 	                            if(reservationsDB.getReservationFromReservationCode(reservationCode) == null) {
 	                                System.out.println("No reservation under this code has been made!");
 	                                break;
 	                            }
-	                            
-	                            
+	                            	                            
 	                            myReservation = reservationsDB.getReservationFromReservationCode(reservationCode);
 	                            int j = 0;
 	                            while (j != 1) {
@@ -596,8 +571,7 @@ public class App {
                         String strRoom = sc.nextLine();
                         userInput = CheckIfInt.getInput(strRoom, "(1) to (5)");
                         switch(userInput){
-                        
-                        
+                                               
                         //Adding case 1 - Checking of room availability details by entering room number 
                     	case 1:
                         	int roomNumOrGuest = 0;
@@ -636,10 +610,8 @@ public class App {
 		                                    System.out.printf(format,available,rooms.rooms[i].getRoomNum(),rooms.rooms[i].getRoomType(),rooms.rooms[i].getWifi(),rooms.rooms[i].getSmoking(),rooms.rooms[i].getView());
 		                                	
 		                                    roomCheck = true;
-		                                    foundRoom = true;
-		                                   
-		                                } //for if specific room is found
-		                           
+		                                    foundRoom = true;	                                   
+		                                } //for if specific room is found	                           
 		                        	} // for for loop
 		                                roomNumOrGuest = 1;
 		                                break;
@@ -1010,10 +982,8 @@ public class App {
                     c.set(Calendar.HOUR_OF_DAY, 0);
                     dt = c.getTime();
                     DateCheck.performChecks(dt, reservationsDB, roomServiceDB);
-                	break;            
-                	
-            	}
-            
+                	break;                            	
+            	}           
             break;
             }
         }//End of While Loop
