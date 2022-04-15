@@ -11,11 +11,11 @@ package Assignment;
 public class VIPSuite extends Room{
 	
 	/**
-	 * Constructs an empty hotel <code>Room</code> with a <code>VIPSuite</code> room type and a Master bed type.
-	 * @param roomNum	the unique room number for this specific type of <code>Room</code>
-	 * @param wifi		the availability of a Wifi feature for this specific type of <code>Room</code>
-	 * @param smoking	the allowance of smoking in this specific type of <code>Room</code>
-	 * @param view		the presence or absence of a balcony for this specific type of <code>Room</code>
+	 * Constructs an empty hotel room with a VIPSuite room type and a Master bed type.
+	 * @param roomNum	the unique room number for this specific type of room.
+	 * @param wifi		the availability of a Wifi feature for this specific type of room.
+	 * @param smoking	the allowance of smoking in this specific type of room.
+	 * @param view		the presence or absence of a balcony for this specific type of room.
 	 */
     public VIPSuite (String roomNum, Boolean wifi, Boolean smoking, Boolean view) {
 
