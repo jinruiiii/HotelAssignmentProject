@@ -207,9 +207,11 @@ public class RoomService implements Payment, Serializable{
      * Displays the total payment for the room service order, billed to the guest staying in the hotel room where the room service was requested.
      */
     public void printBill() {
-    	String format = "%-20s%-20s%-20s%-20s%-20s%n";
+    	String format = "%-30s%-20s%-20s%-20s%n";
     	DecimalFormat df = new DecimalFormat("0.00");
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("kk:mm:ss");
-        System.out.printf(format, this.date, this.name, this.time.format(formatter), "SGD" + df.format(this.payment), this.remarks);
+        Date date2 = Date.from(orderDateandTime.atZone(ZoneId.systemDefault()).toInstant());
+
+        System.out.printf(format, date2, this.name, "SGD" + df.format(this.payment), this.remarks);
     }
 }
