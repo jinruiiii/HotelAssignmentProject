@@ -1,5 +1,6 @@
 package Assignment;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -12,9 +13,13 @@ import java.util.Hashtable;
  * @author tan yu
  *
  */
-public class RoomServiceDB {
+public class RoomServiceDB implements Serializable{
+	
+	/**
+	 * A Hashtable containing all the room service orders of every guest in the room service database.
+	 */
     Hashtable<String, ArrayList<RoomService>> rsDB = new Hashtable<String, ArrayList<RoomService>>();
-    
+    private static final long serialVersionUID = 1L;
     /**
      * Constructs an empty room service database that contains all the room service orders requested by each residing guest. A guest can make multiple room service orders.
      * However, these room service orders will be stored in the room service database and accessed via the guest's unique reservation code. 
