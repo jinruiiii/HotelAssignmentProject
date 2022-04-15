@@ -13,15 +13,38 @@ import java.util.Scanner;
 
 public class IdentityCard implements Serializable{
 	
+	/**
+	 * the name of the guest.
+	 */
     private String name;
+    
+    /**
+     * the country that the guest was born in.
+     */
     private String country;
+    
+    /**
+     * the gender of the guest.
+     */
     private String gender;
+    
+    /**
+     * the nationality of the guest.
+     */
     private String nationality;
+    
+    /**
+     * the residential address of the guest.
+     */
     private String address;
+    
+    /**
+     * the contact number of the guest.
+     */
     private String contact;
     
     /**
-     * Constructor for <code>IdentityCard</code> class.
+     * Constructor for IdentityCard class.
      * Name,Country,Gender,Nationality,Address and contact attributes are all initialized via user input.
      */
 
@@ -197,7 +220,6 @@ public class IdentityCard implements Serializable{
      * Setter to set guest's contact.
      * @param contact Guest's contact is passed as a parameter.
      */
-
     public void setContact(String contact){
         this.contact = contact;
     }
