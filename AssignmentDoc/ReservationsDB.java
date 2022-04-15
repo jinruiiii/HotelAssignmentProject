@@ -13,6 +13,10 @@ import java.io.Serializable;
  */
 public class ReservationsDB implements Serializable{
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * An ArrayList containing all the reservations in the reservation database.
+	 */
     private ArrayList<Object> ReservationDataBase = new ArrayList<Object>();
     //Index		Variable
     //0			Reservation Code
