@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
- * 
+ * Contains the reservations details of the guest.
  * @author joel
  * @author jinrui
  * @author jamie
