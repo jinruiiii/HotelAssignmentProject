@@ -12,7 +12,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter; 
 
 /**
- * 
+ * Contains the room service order details for a particular guest.
  * @author joel
  * @author jinrui
  * @author jamie
