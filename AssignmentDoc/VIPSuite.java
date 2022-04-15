@@ -1,7 +1,7 @@
 package Assignment;
 
 /**
- * 
+ * Contains the details of a VIPSuite.
  * @author joell
  * @author jinrui
  * @author jamie
