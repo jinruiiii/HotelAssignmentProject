@@ -3,7 +3,7 @@ package Assignment;
 import java.io.Serializable;
 
 /**
- * 
+ * Contains the details of each hotel room. 
  * @author joel
  * @author jinrui
  * @author jamie
